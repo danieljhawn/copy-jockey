@@ -15,7 +15,7 @@ function data() {
     }
 
     tabData = tabData.filter(data => data.trim() != '');
-    // console.log(tabData);
+    
     for (cell in tabData) {
         console.log(tabData[cell]);
         const paster = document.createElement('textarea');
@@ -44,12 +44,11 @@ function clearTextArea() {
 
 function next() {
     if (tracker == 0) {
-        console.log(tracker);
+        console.log(tabData[tracker]);
         navigator.clipboard.writeText(tabData[tracker]);
     } else {
-        console.log(tracker);
+        console.log(tabData[tracker]);
         navigator.clipboard.writeText(tabData[tracker]);
-
     }
     tracker++
 }
