@@ -1,10 +1,11 @@
 const input = document.getElementById('input');
-const buttonDiv = document.getElementById('buttons'); 
+const buttonDiv = document.getElementById('buttons');
+let tabData;
+let tracker = 0;
 
 function data() {
     let data = input.value;
     let rowOrCol = document.getElementById('row-or-col').value;
-    let tabData;
     if (rowOrCol == "col") {
         console.log("col");
         tabData = data.split('\n')
@@ -25,6 +26,7 @@ function data() {
         paster.innerHTML = tabData[cell];
         buttonDiv.append(paster, clicker, br);
     }
+    tracker = 0;
 }
 
 function myScript() {
@@ -35,6 +37,19 @@ function myScript() {
 function clearButtons() {
     buttonDiv.innerHTML = '';
 }
+
 function clearTextArea() {
     input.value = '';
+}
+
+function next() {
+    if (tracker == 0) {
+        console.log(tracker);
+        navigator.clipboard.writeText(tabData[tracker]);
+    } else {
+        console.log(tracker);
+        navigator.clipboard.writeText(tabData[tracker]);
+
+    }
+    tracker++
 }
